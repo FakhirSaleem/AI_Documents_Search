@@ -19,7 +19,7 @@ if not UPLOADED_DOCUMENTS_FILE.exists():
     with open(UPLOADED_DOCUMENTS_FILE,"w") as file:
         json.dump([],file)
 
-        
+
 
 embeddings,chunk_texts,chunk_info,chunk_ids=initialize_rag()
 
@@ -153,7 +153,7 @@ def documents():
 
 
 if __name__=="__main__":
-    app.run(debug=True, use_reloader=False, host="0.0.0.0", port=5000)
+    app.run(debug=False, use_reloader=False, host="0.0.0.0", port=5000)
 
     # with app.test_client() as client:
     #     response= client.post(
