@@ -1,0 +1,3 @@
+Programming means writing instructions for a computer.
+Python and Java are popular programming languages.
+Programming requires problem solving and logical thinking.

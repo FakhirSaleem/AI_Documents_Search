@@ -1,0 +1,3 @@
+Data science uses data to find useful information.
+Python is commonly used in data science.
+Data science uses statistics and machine learning.

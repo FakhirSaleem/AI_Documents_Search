@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AI Powered Documnents Search & Q/A</title>
+
+        <link rel="stylesheet" href="{{   url_for('static',filename='style.css')   }}">
+    </head>
+
+    <body> 
+        <div class="container">
+
+            <h1>AI Powered Documnents Search</h1>
+
+            <p class="subtitle">Find relevant information, even when the exact words are different</p>
+
+            
+            <div class="section">
+                <h2>Upload Documents</h2>
+
+                <form id="upload_form">
+                    <input type="file" id="documents" accept=".txt" multiple>
+                    <button type="submit">Upload</button>
+                </form>
+
+                <p id="upload_status"></p>
+            </div>
+
+
+            <div class="section">
+                <h2>Documents List</h2>
+                <div id="documents_list">
+                    Loading Documents....!
+                </div>
+            </div>
+
+
+            <div class="searchbox">
+                <input type="text" id="query" placeholder="Ask a Question about your Documnents" autocomplete="off" maxlength="500">
+
+                <button onclick="askQuestion()">Ask</button>
+                <button onclick="clearsearch()">Clear</button>
+            </div>
+
+            <p class="search_hint">Press Enter To Search</p>
+
+
+            <div class="section">
+                <h2>Answer</h2>
+                <div id="answer"></div>
+            </div>
+
+
+            <div class="section">
+                <h2>Sources   <span id="source_count"></span></h2>
+                <div id="sources"></div>
+            </div>
+
+
+        </div>
+
+        <script src="{{  url_for('static',filename='script.js')  }}"></script>
+
+
+    </body>
+
+</html>
+
+
