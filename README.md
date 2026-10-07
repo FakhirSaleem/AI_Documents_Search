@@ -1,5 +1,11 @@
 # AI-Powered Semantic Document Search & Question Answering System
 
+## Development Journey
+
+Want to see how this project was developed step by step?
+
+[View the Development Journey →](DEVELOPMENT.md)
+
 ## Overview
 
 The **AI-Powered Semantic Document Search & Question Answering System** is a web-based application that allows users to upload text documents and ask questions about their content.
@@ -84,8 +90,6 @@ Answer + sources are displayed
 
 ## Project Structure
 
-## Project Structure
-
 ```text
 AI_Document_Search/
 │
@@ -96,37 +100,53 @@ AI_Document_Search/
 │       └── script.js
 │
 ├── data/
-│   └── Text documents
+│   ├── datascience.txt
+│   ├── programming.txt
+│   └── python.txt
 │
 ├── src/
-│   ├── embedding.py
+│   ├── chunk_search.py
 │   ├── chunking.py
 │   ├── chunks_embedding.py
-│   ├── rag.py
-│   ├── vector_store.py
+│   ├── document_dataframe.py
+│   ├── document_reader.py
+│   ├── documents_analytics.py
+│   ├── embedding.py
+│   ├── evaluation.py
+│   ├── hybrid_search.py
+│   ├── index.py
 │   ├── llm.py
+│   ├── nlp_processor.py
+│   ├── quer_rewriter.py
+│   ├── rag.py
+│   ├── ranking.py
 │   ├── reranker.py
-│   └── quer_rewriter.py
+│   ├── search.py
+│   ├── semantic_search.py
+│   ├── text_processor.py
+│   ├── tfidf_search.py
+│   ├── vector_store.py
+│   ├── visualization.py
+│   └── word_analysis.py
 │
 ├── templates/
 │   └── index.html
 │
-├── tests/
-│
 ├── main.py
-├── uploaded_documents.json
 ├── requirements.txt
 ├── .gitignore
-└── README.md
+├── README.md
+└── DEVELOPMENT.md
 ```
 
+> Some files in `src/` were created during the learning and experimentation stages of the project. Not every file is required by the final web application. See [DEVELOPMENT.md](DEVELOPMENT.md) for a detailed explanation of the development process and the distinction between experimental and application components.
 
 ## Installation
 
 ### 1. Clone the repository
 
 ```bash
-git clone <YOUR_GITHUB_REPOSITORY_URL>
+git https://github.com/FakhirSaleem/AI_Documents_Search.git
 cd AI_Document_Search
 ```
 
@@ -138,7 +158,7 @@ python -m venv .venv
 
 ### 3. Activate the virtual environment
 
-Windows:
+**Windows:**
 
 ```bash
 .venv\Scripts\activate
