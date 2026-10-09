@@ -1,68 +1,312 @@
+
 <!DOCTYPE html>
+
 <html>
-    <head>
-        <title>AI Powered Documnents Search & Q/A</title>
 
-        <link rel="stylesheet" href="{{   url_for('static',filename='style.css')   }}">
-    </head>
+<head>
 
-    <body> 
-        <div class="container">
+    <title>Document Search & Q&A</title>
 
-            <h1>AI Powered Documnents Search</h1>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
-            <p class="subtitle">Find relevant information, even when the exact words are different</p>
+</head>
 
-            
-            <div class="section">
-                <h2>Upload Documents</h2>
 
-                <form id="upload_form">
-                    <input type="file" id="documents" accept=".txt" multiple>
-                    <button type="submit">Upload</button>
-                </form>
+<body>
 
-                <p id="upload_status"></p>
+    <div class="page">
+
+        <!-- Header -->
+
+        <header class="hero">
+
+            <div class="small-label">
+                DOCUMENT SEARCH
             </div>
 
+            <h1>
+                Your little knowledge corner
+            </h1>
 
-            <div class="section">
-                <h2>Documents List</h2>
-                <div id="documents_list">
-                    Loading Documents....!
+            <p class="subtitle">
+                Search through your documents and find the information
+                you're looking for.
+            </p>
+
+        </header>
+
+
+        <!-- Search -->
+
+        <section class="search-panel">
+
+            <div class="search-heading">
+
+                <div class="search-symbol">
+                    ⌕
                 </div>
+
+                <div>
+
+                    <h2>What are you looking for?</h2>
+
+                    <p>
+                        Ask a question about your documents.
+                    </p>
+
+                </div>
+
             </div>
 
 
             <div class="searchbox">
-                <input type="text" id="query" placeholder="Ask a Question about your Documnents" autocomplete="off" maxlength="500">
 
-                <button onclick="askQuestion()">Ask</button>
-                <button onclick="clearsearch()">Clear</button>
+                <input
+                    type="text"
+                    id="query"
+                    placeholder="Ask something..."
+                    autocomplete="off"
+                    maxlength="500"
+                >
+
+                <button
+                    class="ask-button"
+                    onclick="askQuestion()"
+                >
+                    Search
+                </button>
+
+                <button
+                    class="clear-button"
+                    onclick="clearsearch()"
+                >
+                    Clear
+                </button>
+
             </div>
 
-            <p class="search_hint">Press Enter To Search</p>
+
+            <p class="search_hint">
+                Press Enter to search
+            </p>
+
+        </section>
 
 
-            <div class="section">
-                <h2>Answer</h2>
-                <div id="answer"></div>
-            </div>
+        <!-- Main Content -->
+
+        <div class="main-grid">
 
 
-            <div class="section">
-                <h2>Sources   <span id="source_count"></span></h2>
-                <div id="sources"></div>
-            </div>
+            <!-- Documents -->
+
+            <section class="section documents-card">
+
+                <div class="section-heading">
+
+                    <div class="section-icon">
+                        ▤
+                    </div>
+
+                    <div>
+
+                        <h2>Your Documents</h2>
+
+                        <p>
+                            Files currently in your collection
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Upload -->
+
+                <div class="upload-area">
+
+                    <div class="upload-icon">
+                        +
+                    </div>
+
+
+                    <div class="upload-text">
+
+                        <strong>
+                            Add a document
+                        </strong>
+
+                        <p>
+                            Upload one or more
+                            <span>.txt</span>
+                            files.
+                        </p>
+
+                    </div>
+
+
+                    <form id="upload_form">
+
+                        <input
+                            type="file"
+                            id="documents"
+                            accept=".txt"
+                            multiple
+                        >
+
+                        <button
+                            type="submit"
+                            class="upload-button"
+                        >
+                            Upload
+                        </button>
+
+                    </form>
+
+                </div>
+
+
+                <p id="upload_status"></p>
+
+
+                <!-- Document list -->
+
+                <div class="document-list-wrapper">
+
+                    <div class="list-title">
+
+                        <span>
+                            Available files
+                        </span>
+
+                        <span class="little-dot"></span>
+
+                    </div>
+
+
+                    <div id="documents_list">
+                        Loading Documents...!
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Answer -->
+
+            <section class="section answer-card">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <h2>Answer</h2>
+
+                        <p>
+                            Based on your documents
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div id="answer">
+
+                    <div class="empty-answer">
+
+                        
+
+                        <h3>
+                            Nothing here yet
+                        </h3>
+
+                        <p>
+                            Ask a question above and your answer
+                            will appear here.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
 
 
         </div>
 
-        <script src="{{  url_for('static',filename='script.js')  }}"></script>
+
+        <!-- Sources -->
+
+        <section class="section sources-card">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        Sources
+                        <span id="source_count"></span>
+                    </h2>
+
+                    <p>
+                        Documents used for the answer
+                    </p>
+
+                </div>
+
+            </div>
 
 
-    </body>
+            <div id="sources">
+
+                <div class="source-placeholder">
+
+                    <span>⌁</span>
+
+                    Sources will appear here after your search.
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Footer -->
+
+        <footer>
+
+            <div class="footer-line"></div>
+
+            <p>
+                A small place for your documents and ideas.
+            </p>
+
+
+            <!-- Tiny Easter Egg -->
+
+            <details class="easter-egg">
+
+                <summary>☕</summary>
+
+                <p>
+                    You found the tiny coffee break.
+                    <br>
+                    Take a sip. Then search again.
+                </p>
+
+            </details>
+
+        </footer>
+
+
+    </div>
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
 
 </html>
-
-
